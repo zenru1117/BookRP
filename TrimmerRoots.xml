@@ -1,0 +1,18 @@
+﻿<linker>
+    <assembly fullname="BookRP">
+        <type fullname="BookRP.ViewModels.MainViewModel" preserve="all" />
+    </assembly>
+
+    <assembly fullname="ReactiveUI">
+        <type fullname="ReactiveUI.ReactiveObject" preserve="all" />
+        <type fullname="ReactiveUI.IReactiveObjectExtensions" preserve="all" />
+    </assembly>
+
+    <assembly fullname="Splat">
+        <type fullname="Splat.*" preserve="all" />
+    </assembly>
+
+    <assembly fullname="DiscordRPC">
+        <type fullname="DiscordRPC.DiscordRpcClient" preserve="all" />
+    </assembly>
+</linker>

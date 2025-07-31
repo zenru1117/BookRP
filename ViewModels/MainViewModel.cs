@@ -8,10 +8,10 @@ namespace BookRP.ViewModels;
 
 public class MainViewModel : ReactiveObject
 {
-    public List<ClassificationItem> Classifications => Classification.List;
+    public static List<ClassificationItem> Classifications => Classification.List;
     private ClassificationItem? _selectedClassification;
     
-    public string AppVersion { get; }
+    // public string AppVersion { get; }
 
     public ClassificationItem? SelectedClassification
     {
@@ -21,14 +21,20 @@ public class MainViewModel : ReactiveObject
 
     public MainViewModel()
     {
-        AppVersion = GetAppVersion();
+        // AppVersion = GetAppVersion();
         SelectedClassification = Classification.List.FirstOrDefault();
     }
 
-    private string GetAppVersion()
-    {
-        var entryAsm = Assembly.GetEntryAssembly() ?? Assembly.GetExecutingAssembly();
-        var infoAttr = entryAsm.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
-        return !string.IsNullOrWhiteSpace(infoAttr?.InformationalVersion) ? infoAttr.InformationalVersion : "err";
-    }
+    // private static string GetAppVersion()
+    // {
+    //     var entryAsm = Assembly.GetEntryAssembly() ?? Assembly.GetExecutingAssembly();
+    //     var infoAttr = entryAsm.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
+    //     var version = infoAttr?.InformationalVersion ?? string.Empty;
+    //
+    //     if (string.IsNullOrWhiteSpace(version))
+    //         return "err";
+    //
+    //     var clean = version.Split('+')[0];
+    //     return clean;
+    // }
 }
