@@ -1,0 +1,64 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:BookRP.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="600"
+        x:Class="BookRP.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Width="400" Height="600" MinWidth="400" MinHeight="600"
+        Title="Book RichPresence">
+    
+    <Grid RowDefinitions="80,*,45">
+        <!-- Header -->
+        <StackPanel Orientation="Horizontal"
+                    Margin="20,10,12,10">
+            <Image Source="avares://BookRP/Assets/AppIcon.png"
+                   Width="48" Height="48" Margin="0,0,12,0"/>
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Book RichPresence" FontSize="20" FontWeight="Bold" />
+                <TextBlock Name="VersionTextBlock" Text="{Binding AppVersion}" FontSize="16" />
+            </StackPanel>
+        </StackPanel>
+        
+        <!-- Content -->
+        <ScrollViewer Grid.Row="1">
+            <StackPanel>
+                <CheckBox Content="실행 시 업데이트 확인" Classes="settings" />
+            
+                <!-- Book Name -->
+                <Grid Height="30" Margin="0,30,0,0" ColumnDefinitions="100,*">
+                    <TextBlock Grid.Column="0" Text="책 제목" Classes="label" />
+                    <TextBox Grid.Column="1" Name="BookTitleTextBox" Classes="form-input" />
+                </Grid>
+                
+                <!-- Author -->
+                <Grid Height="30" Margin="0,20,0,0" ColumnDefinitions="100,*">
+                    <TextBlock Grid.Column="0" Text="글쓴이" Classes="label" />
+                    <TextBox Grid.Column="1" Name="AuthorTextBox" Classes="form-input" />
+                </Grid>
+                
+                <!-- Translator -->
+                <Grid Height="30" Margin="0,20,0,0" ColumnDefinitions="100,*">
+                    <TextBlock Grid.Column="0" Text="옮긴이" Classes="label" />
+                    <TextBox Grid.Column="1" Name="TranslatorTextBox" Classes="form-input" />
+                </Grid>
+                
+                <!-- Classification -->
+                <Grid Height="30" Margin="0,20,0,0" ColumnDefinitions="100,*">
+                    <TextBlock Grid.Column="0" Text="분류" Classes="label" />
+                    <ComboBox Grid.Column="1" Name="ClassificationComboBox" Classes="form-input"
+                        ItemsSource="{Binding Classifications}"
+                        SelectedItem="{Binding SelectedClassification}"
+                        DisplayMemberBinding="{Binding Name}" />
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+        
+        <!-- Footer -->
+        <Grid Grid.Row="2" ColumnDefinitions="*,*">
+            <Button Grid.Column="0" Content="적용" Classes="default" Name="ApplyButton" Click="ApplyButton_OnClick" />
+            <Button Grid.Column="1" Content="제거" Classes="default" Name="RemoveButton" Click="RemoveButton_OnClick" />
+        </Grid>
+    </Grid>
+</Window>

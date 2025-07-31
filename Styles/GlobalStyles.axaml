@@ -1,0 +1,47 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!-- Add Controls for Previewer Here -->
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Add Styles Here -->
+    <Style Selector="TextBlock.label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="20,0,0,0"/>
+    </Style>
+
+    <Style Selector="TextBox.form-input">
+        <Setter Property="Height" Value="26"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style Selector="Button.default">
+        <Setter Property="Margin" Value="6"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style Selector="Button.search">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="20,10,10,0"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style Selector="CheckBox.settings">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Margin" Value="20,10,0,0"/>
+    </Style>
+
+    <Style Selector="ComboBox.form-input">
+        <Setter Property="Height" Value="26"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style> 
+</Styles>
